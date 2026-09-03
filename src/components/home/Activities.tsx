@@ -1,21 +1,26 @@
 import { motion } from 'framer-motion';
-import { FiArrowUpRight } from 'react-icons/fi';
+import { FaEgg } from 'react-icons/fa';
+import { GiChicken, GiFertilizerBag  } from "react-icons/gi";
+
 
 const activities = [
   {
-    number: '01',
+    id: 1,
+    icon: FaEgg,
     title: 'Oeufs de ponte',
     description:
       'Ponte quotidienne maîtrisée. Coquilles solides, calibre régulier, fraîcheur garantie.',
   },
   {
-    number: '02',
+    id: 2,
+    icon: GiChicken,
     title: 'Volaille de Reforme',
     description:
       'Poules pondeuses en fin de cycle, vendues vivantes. Regroupées, préservées des maladies et des oiseaux sauvages.',
   },
   {
-    number: '03',
+    id: 3,
+    icon: GiFertilizerBag,
     title: 'Fiente Azotée',
     description:
       'Fiente riche en azote récupérée comme engrais organique pour l\'agriculteur. L\'économie circulaire du domaine.',
@@ -39,7 +44,7 @@ function Activities() {
         <div className="mt-14 grid gap-5 md:grid-cols-3">
           {activities.map((activity, index) => (
             <motion.article
-              key={activity.number}
+              key={activity.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -47,12 +52,12 @@ function Activities() {
               className="group rounded-[2rem] bg-white p-8 transition duration-500 hover:-translate-y-2 hover:shadow-xl"
             >
               <div className="flex items-start justify-between">
-                <span className="text-sm font-semibold text-[#2E7D32]">
-                  {activity.number}
-                </span>
+                <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#EAF4E9] text-[#2E7D32] transition-all duration-500 group-hover:scale-110 group-hover:bg-[#2E7D32] group-hover:text-white">
+                  <activity.icon size={20} strokeWidth={1.8} />
+                </div>
 
-                <div className="flex h-11 w-11 items-center justify-center rounded-full bg-[#EFF5EC] transition group-hover:bg-[#2E7D32] group-hover:text-white">
-                  <FiArrowUpRight />
+                <div className="flex items-center gap-1.5">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#A5D6A7] transition-all duration-300 group-hover:w-5 group-hover:bg-[#2E7D32]" />
                 </div>
               </div>
 

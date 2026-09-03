@@ -32,3 +32,40 @@ a {
   background: #2e7d32;
   color: white;
 }
+
+.honeycomb-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  row-gap: 0;
+}
+
+@media (min-width: 640px) {
+  .honeycomb-gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .honeycomb-gallery {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .honeycomb-gallery {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.honeycomb-item:nth-child(even) {
+  transform: translateY(50%);
+}
+
+.honeycomb-item:hover {
+  transform: translateY(50%) scale(1.12);
+}
+
+.honeycomb-item:nth-child(odd):hover {
+  transform: scale(1.12);
+}

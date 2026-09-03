@@ -7,6 +7,8 @@ import Stats from '../components/home/Stats';
 import Gallery from '../components/home/Gallery';
 import Contact from '../components/home/Contact';
 import Footer from '../components/layout/Footer';
+import Timeline from '../components/home/Timeline';
+import FarmLocation from '../components/home/FarmLocation';
 
 function Home() {
   return (
@@ -16,9 +18,11 @@ function Home() {
       <main>
         <Hero />
         <About />
+        <Timeline />
         <Activities />
         <WhyUs />
         <Stats />
+        <FarmLocation />
         <Gallery />
         <Contact />
       </main>
